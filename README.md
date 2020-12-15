@@ -10,8 +10,8 @@ You job is to refactor the code and make it readable, while keeping the code in 
 # How To Start
 
 1. Clone this repository `git clone https://github.com/CodelyTV/incomprehensible-finder-refactoring-kata`
-2. Build the docker container which contains all the required dependencies with `make build`
-3. Run the tests with `make test`
+2. Install the required packages with `docker-compose run composer install` 
+3. Run the tests with `docker-compose run phpunit`
 4. Start refactoring! 
 
 The primary goal is to refactor the code in `src/Algorithm/Finder.php` - as it stands the code is incomprehensible. 
