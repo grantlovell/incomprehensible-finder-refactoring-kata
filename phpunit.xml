@@ -1,5 +1,6 @@
 <phpunit
         bootstrap="vendor/autoload.php"
+        cacheResultFile="var/cache/phpunit/test-results"
         colors="true"
         beStrictAboutTestsThatDoNotTestAnything="true"
         beStrictAboutOutputDuringTests="true"
