@@ -26,5 +26,4 @@ services:
     restart: "no"
     volumes:
       - ./:/app
-    working_dir: /app
     entrypoint: vendor/bin/phpunit
