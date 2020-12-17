@@ -9,7 +9,7 @@ You job is to refactor the code and make it readable, while keeping the code in 
 
 # How To Start
 
-1. Clone this repository `git clone https://github.com/CodelyTV/incomprehensible-finder-refactoring-kata`
+1. Clone this repository
 2. Install the required packages with `docker-compose run composer install` 
 3. Run the tests with `docker-compose run phpunit`
 4. Start refactoring! 
