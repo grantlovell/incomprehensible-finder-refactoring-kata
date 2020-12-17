@@ -17,13 +17,11 @@ services:
       - .:/app
     restart: never
   phpunit:
-    build:
-      context: ./
-      dockerfile: docker/phpunit/Dockerfile
-    image: phpunit
-    container_name: finder-app
-    restart: never
+    image: kata-app
+    depends_on:
+      - app
+    restart: "no"
     volumes:
-      - .:/app
+      - ./:/app
     working_dir: /app
     entrypoint: vendor/bin/phpunit
