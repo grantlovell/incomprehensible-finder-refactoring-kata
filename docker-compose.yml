@@ -10,12 +10,15 @@ services:
       - ./:/app
     working_dir: /app
   composer:
-    image: composer:1
+    image: kata-app
+    depends_on:
+      - app
     environment:
       - COMPOSER_CACHE_DIR=/app/var/cache/composer
     volumes:
       - .:/app
-    restart: never
+    restart: "no"
+    entrypoint: composer
   phpunit:
     image: kata-app
     depends_on:
