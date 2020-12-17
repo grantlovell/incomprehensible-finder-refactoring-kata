@@ -16,17 +16,24 @@ You job is to refactor the code and make it readable, while keeping the code in 
 
 ## with mutagen.io
 $ `mv docker-compose.yml docker-compose.bind.yml`
+
 $ `mv docker-compose.mutagen.yml docker-compose.yml`
 
 $ `docker-compose build app`
+
 $ `docker-compose up -d app`
+
 $ `mutagen sync create --name=kata-app --default-directory-mode=0755  ./ docker://kata-app/app`
+
 $ `docker-compose run composer install`
+
 $ `docker-compose run phpunit`
 
 ### remove mutagen.io
 $ `mutagen sync terminate kata-app`
+
 $ `mv docker-compose.yml docker-compose.mutagen.yml`
+
 $ `mv docker-compose.bind.yml docker-compose.yml`
 
 
