@@ -16,7 +16,7 @@ services:
     environment:
       - COMPOSER_CACHE_DIR=/app/var/cache/composer
     volumes:
-      - .:/app
+      - ./:/app
     restart: "no"
     entrypoint: composer
   phpunit:
