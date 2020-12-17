@@ -23,7 +23,7 @@ final class FinderTest extends TestCase
     /** @var Thing */
     private $mike;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->sue            = new Thing();
         $this->sue->name      = "Sue";
