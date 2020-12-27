@@ -5,9 +5,10 @@ services:
       context: ./
       dockerfile: docker/app/Dockerfile
     image: kata-app
+    container_name: kata-app
     restart: unless-stopped
     volumes:
-      - ./:/app
+      - code:/app
     working_dir: /app
   composer:
     image: kata-app
@@ -16,7 +17,7 @@ services:
     environment:
       - COMPOSER_CACHE_DIR=/app/var/cache/composer
     volumes:
-      - ./:/app
+      - code:/app
     restart: "no"
     entrypoint: composer
   phpunit:
@@ -25,5 +26,15 @@ services:
       - app
     restart: "no"
     volumes:
-      - ./:/app
+      - code:/app
     entrypoint: vendor/bin/phpunit
+  files:
+    image: alpine:latest
+    container_name: kata-app-files
+    entrypoint: top
+    restart: unless-stopped
+    volumes:
+      - code:/project
+
+volumes:
+  code:
